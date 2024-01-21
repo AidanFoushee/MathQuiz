@@ -27,6 +27,8 @@ namespace MathQuiz
         int divisor;
 
         int timeLeft;
+
+        DateTime curr_date;
         public Form1()
         {
             InitializeComponent();
@@ -60,6 +62,9 @@ namespace MathQuiz
             dividedLeftLabel.Text = dividend.ToString();
             dividedRightLabel.Text = divisor.ToString();
             quotient.Value = 0;
+
+            curr_date = DateTime.Today;
+            date.Text = curr_date.ToString("D");
 
             timeLeft = 30;
             timeLabel.Text = "30 seconds";
@@ -114,5 +119,10 @@ namespace MathQuiz
                 startButton.Enabled = true;
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
     }
 }
